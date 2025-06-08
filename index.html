@@ -3,437 +3,412 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrimeService - Business Solutions</title>
+    <title>Horizon Builders | Premium Construction & Real Estate</title>
+    <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
-            --text-color: #1f2937;
-            --light-color: #f9fafb;
-            --dark-color: #111827;
-            --gray-color: #6b7280;
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #7f8c8d;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-color);
         }
-
+        
+        body {
+            line-height: 1.6;
+            color: var(--text);
+        }
+        
         .container {
-            width: 100%;
+            width: 85%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
-
+        
         section {
             padding: 80px 0;
         }
-
-        h1, h2, h3 {
-            margin-bottom: 1rem;
-            line-height: 1.2;
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--primary);
         }
-
-        h1 {
-            font-size: 2.5rem;
-        }
-
+        
         h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 15px;
         }
-
-        h3 {
-            font-size: 1.5rem;
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
         }
-
+        
         p {
-            margin-bottom: 1rem;
-            color: var(--gray-color);
+            margin-bottom: 15px;
+            color: var(--text-light);
         }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
+        
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary-color);
+            background: var(--secondary);
             color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
             text-decoration: none;
-            border-radius: 5px;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
         }
-
+        
         .btn:hover {
-            background-color: var(--secondary-color);
+            background: #2980b9;
             transform: translateY(-2px);
         }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
+        
+        .btn-accent {
+            background: var(--accent);
         }
-
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
+        
+        .btn-accent:hover {
+            background: #c0392b;
         }
-
-        .text-center {
-            text-align: center;
-        }
-
+        
         /* Header */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
             position: fixed;
             width: 100%;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-
-        nav {
+        
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
         }
-
+        
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: white;
             text-decoration: none;
         }
-
-        .nav-links {
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
             display: flex;
             list-style: none;
         }
-
-        .nav-links li {
+        
+        nav ul li {
             margin-left: 30px;
         }
-
-        .nav-links a {
+        
+        nav ul li a {
+            color: white;
             text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s ease;
         }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
+        
+        nav ul li a:hover {
+            color: var(--secondary);
         }
-
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-
+        
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #f0f4ff, #e6f0ff);
-            padding: 150px 0 80px;
-        }
-
-        .hero-content {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
         }
-
-        .hero-text {
-            flex: 1;
-            min-width: 300px;
-            padding-right: 40px;
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
-
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
-        }
-
+        
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
         }
-
+        
         .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 500px;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ecf0f1;
         }
-
-        /* Features Section */
-        .features {
-            background-color: white;
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light);
         }
-
-        .features-grid {
+        
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 50px;
         }
-
-        .feature-card {
-            background-color: var(--light-color);
-            border-radius: 10px;
+        
+        .service-card {
+            background: white;
             padding: 30px;
+            border-radius: 5px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
-
-        .feature-card:hover {
+        
+        .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
         }
-
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #f0f4ff, #e6f0ff);
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
-
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
+        
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 250px;
         }
-
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
+        
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
-
-        .contact-info h3 {
-            margin-bottom: 1.5rem;
+        
+        .project-card:hover img {
+            transform: scale(1.1);
         }
-
-        .contact-details {
-            margin-bottom: 2rem;
+        
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(44, 62, 80, 0.9);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
         }
-
-        .contact-details p {
-            margin-bottom: 0.5rem;
+        
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--light);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: var(--text);
+        }
+        
+        .testimonial-author {
             display: flex;
             align-items: center;
         }
-
-        .contact-details i {
-            margin-right: 10px;
-            color: var(--primary-color);
-            width: 20px;
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
         }
-
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .author-info p {
+            margin-bottom: 0;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
         .contact-form {
-            flex: 1;
-            min-width: 300px;
-            background-color: white;
+            max-width: 600px;
+            margin: 50px auto 0;
+            background: white;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 5px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-
+        
         .form-group {
             margin-bottom: 20px;
         }
-
+        
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--primary);
         }
-
-        .form-control {
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 12px 15px;
+            padding: 12px;
             border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
+            border-radius: 4px;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
         }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-color);
+        
+        .form-group textarea {
+            height: 150px;
         }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
+        
         /* Footer */
         footer {
-            background-color: var(--dark-color);
+            background-color: var(--primary);
             color: white;
             padding: 50px 0 20px;
         }
-
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 40px;
-        }
-
-        .footer-column {
-            flex: 1;
-            min-width: 200px;
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
             margin-bottom: 30px;
         }
-
+        
         .footer-column h3 {
             color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
         }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
+        
+        .footer-column p, 
+        .footer-column a {
+            color: #bdc3c7;
             margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #d1d5db;
+            display: block;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
-        .footer-links a:hover {
-            color: white;
+        
+        .footer-column a:hover {
+            color: var(--secondary);
         }
-
+        
         .social-links {
             display: flex;
             gap: 15px;
         }
-
+        
         .social-links a {
-            color: white;
             font-size: 1.2rem;
+            color: #bdc3c7;
             transition: color 0.3s ease;
         }
-
+        
         .social-links a:hover {
-            color: var(--accent-color);
+            color: var(--secondary);
         }
-
+        
         .copyright {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid #374151;
-            color: #9ca3af;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
             font-size: 0.9rem;
         }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero-text {
-                padding-right: 0;
-                margin-bottom: 40px;
-            }
-
-            .hero-content {
-                text-align: center;
-            }
-
-            .hero p {
-                max-width: 100%;
-            }
-        }
-
+        
+        /* Responsive */
         @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
             section {
                 padding: 60px 0;
-            }
-
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: white;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 40px;
-                transition: left 0.3s ease;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                margin: 0 0 30px 0;
-            }
-
-            .hero {
-                padding: 120px 0 60px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            section {
-                padding: 50px 0;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.6rem;
-            }
-
-            .btn {
-                padding: 10px 20px;
             }
         }
     </style>
@@ -441,95 +416,178 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="container">
+        <div class="container header-container">
+            <a href="#" class="logo">Horizon<span>Builders</span></a>
             <nav>
-                <a href="#" class="logo">PrimeService</a>
-                <div class="menu-toggle" id="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#features">Features</a></li>
+                <ul>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="btn btn-outline">Login</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Building Your Vision, Crafting Your Future</h1>
+            <p>Horizon Builders delivers exceptional construction and real estate services with unmatched quality and professionalism. Let us bring your dream project to life.</p>
+            <a href="#contact" class="btn">Get a Free Quote</a>
+            <a href="#services" class="btn btn-accent">Our Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Transform Your Business With Our Solutions</h1>
-                    <p>We provide innovative services to help your business grow and succeed in today's competitive market. Our team of experts is ready to assist you.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn">Get Started</a>
-                        <a href="#features" class="btn btn-outline">Learn More</a>
-                    </div>
+            <h2>Our Services</h2>
+            <p class="section-subtitle">We offer comprehensive construction and real estate solutions tailored to your needs.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Custom Home Building</h3>
+                    <p>From concept to completion, we build homes that reflect your unique style and meet your family's needs.</p>
                 </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Business team working">
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3>Commercial Construction</h3>
+                    <p>Expert commercial builders delivering functional, efficient spaces for businesses of all sizes.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-hammer"></i></div>
+                    <h3>Renovations & Remodeling</h3>
+                    <p>Transform your existing space with our high-quality renovation and remodeling services.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-city"></i></div>
+                    <h3>Real Estate Development</h3>
+                    <p>Full-service real estate development from land acquisition to project completion.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Architectural Design</h3>
+                    <p>Innovative design solutions that balance aesthetics, functionality, and budget.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <h3>Project Management</h3>
+                    <p>Professional oversight to ensure your project stays on time and on budget.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
         <div class="container">
-            <h2>Why Choose Our Services</h2>
-            <p class="text-center">We deliver exceptional value through our comprehensive service offerings</p>
+            <h2>Featured Projects</h2>
+            <p class="section-subtitle">Explore our portfolio of completed projects that showcase our expertise and quality.</p>
             
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Modern Residence">
+                    <div class="project-overlay">
+                        <h3>Modern Residence</h3>
+                        <p>Contemporary 4-bedroom home with sustainable features</p>
                     </div>
-                    <h3>Growth Strategies</h3>
-                    <p>Customized growth plans tailored to your business needs and market conditions to maximize your potential.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Office Complex">
+                    <div class="project-overlay">
+                        <h3>Office Complex</h3>
+                        <p>Mixed-use development with retail and office spaces</p>
                     </div>
-                    <h3>Expert Team</h3>
-                    <p>Our experienced professionals bring years of industry knowledge to help solve your business challenges.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-lightbulb"></i>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Luxury Condominium">
+                    <div class="project-overlay">
+                        <h3>Luxury Condominium</h3>
+                        <p>High-end residential building with premium amenities</p>
                     </div>
-                    <h3>Innovative Solutions</h3>
-                    <p>Cutting-edge approaches that keep you ahead of competitors and adapt to changing market trends.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Historic Renovation">
+                    <div class="project-overlay">
+                        <h3>Historic Renovation</h3>
+                        <p>Preservation and modernization of a landmark building</p>
                     </div>
-                    <h3>24/7 Support</h3>
-                    <p>Round-the-clock assistance to ensure your business operations run smoothly at all times.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Community Center">
+                    <div class="project-overlay">
+                        <h3>Community Center</h3>
+                        <p>Public facility serving the local neighborhood</p>
                     </div>
-                    <h3>Data Security</h3>
-                    <p>Robust security measures to protect your sensitive business information and customer data.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Industrial Facility">
+                    <div class="project-overlay">
+                        <h3>Industrial Facility</h3>
+                        <p>Custom-built manufacturing plant with advanced features</p>
                     </div>
-                    <h3>Cost Effective</h3>
-                    <p>High-value services designed to deliver maximum ROI without compromising on quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>Client Testimonials</h2>
+            <p class="section-subtitle">Hear what our clients say about working with Horizon Builders.</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Horizon Builders transformed our vision into reality. Their attention to detail and commitment to quality was evident throughout the entire process. We couldn't be happier with our new home."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="author-img">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "As a commercial developer, I've worked with many construction firms. Horizon stands out for their professionalism, reliability, and ability to deliver complex projects on time and within budget."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="author-img">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Commercial Developer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The renovation of our historic property was handled with such care and expertise. Horizon's team respected the building's character while modernizing it for contemporary use. Exceptional work!"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez" class="author-img">
+                        <div class="author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <p>Property Owner</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -539,60 +597,45 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2>Get In Touch</h2>
-            <p class="text-center">Have questions or ready to get started? Contact us today!</p>
+            <p class="section-subtitle">Ready to start your project? Contact us today for a free consultation.</p>
             
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Business Ave, Suite 500, New York, NY 10001</p>
-                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                        <p><i class="fas fa-envelope"></i> info@primeservice.com</p>
-                        <p><i class="fas fa-clock"></i> Monday - Friday: 9:00 AM - 6:00 PM</p>
+            <div class="contact-form">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                    <div class="social-media">
-                        <h3>Follow Us</h3>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" class="form-control">
-                                <option value="">Select a service</option>
-                                <option value="consulting">Business Consulting</option>
-                                <option value="marketing">Digital Marketing</option>
-                                <option value="development">Web Development</option>
-                                <option value="support">IT Support</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service</option>
+                            <option value="custom-home">Custom Home Building</option>
+                            <option value="commercial">Commercial Construction</option>
+                            <option value="renovation">Renovations & Remodeling</option>
+                            <option value="development">Real Estate Development</option>
+                            <option value="design">Architectural Design</option>
+                            <option value="management">Project Management</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
@@ -600,132 +643,51 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-container">
                 <div class="footer-column">
-                    <h3>PrimeService</h3>
-                    <p>Helping businesses grow and succeed through innovative solutions and expert guidance.</p>
-                    <div class="social-links" style="margin-top: 20px;">
+                    <h3>Horizon Builders</h3>
+                    <p>Building excellence since 1995. We're committed to quality construction and exceptional customer service.</p>
+                    <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Business Consulting</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">IT Support</a></li>
-                        <li><a href="#">Cloud Solutions</a></li>
-                    </ul>
+                    <a href="#">Custom Home Building</a>
+                    <a href="#">Commercial Construction</a>
+                    <a href="#">Renovations & Remodeling</a>
+                    <a href="#">Real Estate Development</a>
+                    <a href="#">Architectural Design</a>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
-                    <form class="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" class="form-control" style="margin-top: 10px;">
-                        </div>
-                        <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Subscribe</button>
-                    </form>
+                    <h3>Contact Info</h3>
+                    <p>123 Builder's Way, Suite 100</p>
+                    <p>Construction City, CC 90210</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Email: info@horizonbuilders.com</p>
+                    <p>Hours: Mon-Fri 8am-5pm</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 PrimeService. All Rights Reserved.</p>
+                <p>&copy; 2023 Horizon Builders. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerHeight = document.querySelector('header').offsetHeight;
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would typically send the form data to a server
-            // For this example, we'll just show an alert
-            alert(Thank you, ${name}! Your message has been received. We'll contact you at ${email} soon.);
-            
-            // Reset the form
-            contactForm.reset();
-        });
-
-        // Add animation to feature cards when they come into view
-        const featureCards = document.querySelectorAll('.feature-card');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        featureCards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(card);
-        });
-    </script>
 </body>
 </html>
