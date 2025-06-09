@@ -3,325 +3,1370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon | Modern Landing</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Lucky Spin Casino - Win Big!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Global Styles */
         :root {
-            --primary: #6c5ce7;
-            --secondary: #a29bfe;
-            --dark: #1a1a2e;
-            --light: #f8f9fa;
-            --accent: #00cec9;
+            --primary-color: #ff5722;
+            --secondary-color: #ff9800;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --success-color: #4caf50;
+            --info-color: #2196f3;
+            --warning-color: #ffc107;
+            --danger-color: #f44336;
+            --jackpot-color: #ffd700;
+            --text-color: #333;
+            --text-light: #f8f9fa;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            background-color: var(--dark);
-            color: var(--light);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(108, 92, 231, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(0, 206, 201, 0.1) 0%, transparent 50%);
-        }
-        
-        .container {
-            max-width: 800px;
-            width: 100%;
-        }
-        
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-            display: inline-block;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        p {
-            font-size: 1.2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background-color: #f5f5f5;
             line-height: 1.6;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
-        
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 3rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .countdown-item {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            padding: 1.5rem 1rem;
-            min-width: 100px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .countdown-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .countdown-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.7;
-        }
-        
-        .subscribe {
-            margin: 3rem 0;
-        }
-        
-        .subscribe-form {
-            display: flex;
-            max-width: 500px;
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
-            gap: 0.5rem;
+            padding: 0 20px;
         }
-        
-        .subscribe-input {
-            flex: 1;
-            padding: 1rem 1.5rem;
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
             border: none;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--light);
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-        
-        .subscribe-input:focus {
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.3);
-        }
-        
-        .subscribe-button {
-            padding: 1rem 2rem;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
+            border-radius: 4px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            text-align: center;
+            text-decoration: none;
         }
-        
-        .subscribe-button:hover {
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #e64a19;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+            box-shadow: var(--shadow);
         }
-        
-        .social-icons {
+
+        .btn-secondary {
+            background-color: var(--dark-color);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #16213e;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .btn-large {
+            padding: 15px 30px;
+            font-size: 18px;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 87, 34, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 87, 34, 0);
+            }
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            margin-left: 10px;
+            color: var(--primary-color);
+            animation: spin 5s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, var(--dark-color) 0%, #16213e 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .slot-machine {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 3rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
-        .social-icon {
-            width: 50px;
-            height: 50px;
+
+        .slot-reel {
+            width: 80px;
+            height: 80px;
+            background: white;
+            margin: 0 5px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--dark-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .slot-reel.win {
+            animation: winSpin 0.5s 3;
+        }
+
+        @keyframes winSpin {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .spin-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .spin-btn:hover {
+            background: #e64a19;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Jackpot Section */
+        .jackpot-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .jackpot-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: var(--dark-color);
+        }
+
+        .jackpot-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .jackpot-card {
+            flex: 1;
+            min-width: 250px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .jackpot-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .jackpot-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .jackpot-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .jackpot-amount {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--jackpot-color);
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+            }
+            to {
+                text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            }
+        }
+
+        .progress-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 80%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 5px;
+            transition: width 1s ease;
+        }
+
+        /* Bonus Section */
+        .bonus-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+        }
+
+        .bonus-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: var(--dark-color);
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .bonus-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .bonus-highlight {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .bonus-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--danger-color);
+            color: white;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--light);
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-        
-        .social-icon:hover {
-            background: var(--primary);
-            transform: translateY(-5px);
+
+        .bonus-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark-color);
         }
-        
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--primary);
+
+        .bonus-amount {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .bonus-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Games Section */
+        .games-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .games-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: var(--dark-color);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .game-card:hover .game-image img {
+            transform: scale(1.05);
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .game-card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-btn {
+            padding: 10px 20px;
+            background: var(--primary-color);
             color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transform: translateX(200%);
-            transition: transform 0.3s ease;
-            z-index: 1000;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
         }
-        
-        .notification.show {
-            transform: translateX(0);
+
+        .play-btn:hover {
+            background: #e64a19;
+            transform: scale(1.05);
         }
-        
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
+
+        .game-card h3 {
+            padding: 15px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .game-rating {
+            padding: 0 15px 15px;
+            color: var(--warning-color);
+            text-align: center;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--dark-color) 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 50px 0 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .link-group {
+            min-width: 150px;
+        }
+
+        .link-group h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .link-group ul {
+            list-style: none;
+        }
+
+        .link-group li {
+            margin-bottom: 10px;
+        }
+
+        .link-group a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .link-group a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+            font-size: 24px;
+        }
+
+        .payment-methods i {
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .payment-methods i:hover {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+
+        /* Registration Modal */
+        .registration-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            animation: modalFadeIn 0.3s;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
             }
-            
-            p {
-                font-size: 1rem;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
-            
-            .countdown {
-                gap: 0.5rem;
-            }
-            
-            .countdown-item {
-                min-width: 80px;
-                padding: 1rem 0.5rem;
-            }
-            
-            .countdown-number {
-                font-size: 1.8rem;
-            }
-            
-            .subscribe-form {
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--danger-color);
+            transform: rotate(90deg);
+        }
+
+        .modal-content h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.2);
+        }
+
+        .social-login {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .social-login p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-btn.google {
+            background: #db4437;
+        }
+
+        .social-btn.facebook {
+            background: #4267b2;
+        }
+
+        .social-btn.apple {
+            background: #000;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero .container {
                 flex-direction: column;
+                text-align: center;
             }
             
-            .subscribe-button {
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+            
+            .jackpot-card {
+                min-width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
                 width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--dark-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active .line:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .hamburger.active .line:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .line:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .hero-content p {
+                font-size: 18px;
+            }
+            
+            .jackpot-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .jackpot-card {
+                width: 100%;
+                max-width: 350px;
+                margin-bottom: 20px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            .hero-content h1 {
+                font-size: 30px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .slot-reel {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+            }
+            
+            .modal-content {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">MODERN</div>
-        <h1>Something Awesome Is Coming Soon</h1>
-        <p>We're working hard to bring you an amazing experience. Stay tuned for our launch and be the first to know when we go live!</p>
-        
-        <div class="countdown">
-            <div class="countdown-item">
-                <div class="countdown-number" id="days">00</div>
-                <div class="countdown-label">Days</div>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span>Lucky Spin</span>
+                    <div class="logo-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#bonuses">Bonuses</a></li>
+                    <li><a href="#jackpots">Jackpots</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Spin to Win <span class="highlight">Big!</span></h1>
+                <p>Join now and get a <span class="highlight">200% Welcome Bonus</span> up to $1000 on your first deposit!</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary pulse" id="register-btn">Register Now</button>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
             </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="hours">00</div>
-                <div class="countdown-label">Hours</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="minutes">00</div>
-                <div class="countdown-label">Minutes</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="seconds">00</div>
-                <div class="countdown-label">Seconds</div>
+            <div class="hero-image">
+                <div class="slot-machine">
+                    <div class="slot-reel" id="reel1">7</div>
+                    <div class="slot-reel" id="reel2">7</div>
+                    <div class="slot-reel" id="reel3">7</div>
+                </div>
+                <button class="spin-btn" id="spin-btn">SPIN</button>
             </div>
         </div>
-        
-        <div class="subscribe">
-            <h3>Get Notified When We Launch</h3>
-            <form class="subscribe-form" id="subscribeForm">
-                <input type="email" class="subscribe-input" placeholder="Enter your email" required>
-                <button type="submit" class="subscribe-button">Subscribe</button>
+    </section>
+
+    <section class="jackpot-section" id="jackpots">
+        <div class="container">
+            <h2>Current Jackpots</h2>
+            <div class="jackpot-container">
+                <div class="jackpot-card">
+                    <div class="jackpot-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Mega Fortune</h3>
+                    <div class="jackpot-amount" id="mega-jackpot">$12,456,789</div>
+                    <div class="progress-label">Growing fast!</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="jackpot-card">
+                    <div class="jackpot-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Diamond Dreams</h3>
+                    <div class="jackpot-amount" id="diamond-jackpot">$8,245,321</div>
+                    <div class="progress-label">Hit soon!</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="jackpot-card">
+                    <div class="jackpot-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Royal Riches</h3>
+                    <div class="jackpot-amount" id="royal-jackpot">$5,678,901</div>
+                    <div class="progress-label">New record!</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bonus-section" id="bonuses">
+        <div class="container">
+            <h2>Exclusive Bonuses</h2>
+            <div class="bonus-grid">
+                <div class="bonus-card bonus-highlight">
+                    <div class="bonus-badge">HOT</div>
+                    <h3>Welcome Package</h3>
+                    <div class="bonus-amount">200% up to $1000</div>
+                    <p>+ 50 Free Spins on your first deposit</p>
+                    <button class="btn btn-small">Claim Now</button>
+                </div>
+                <div class="bonus-card">
+                    <h3>Weekend Reload</h3>
+                    <div class="bonus-amount">50% up to $500</div>
+                    <p>Every Friday to Sunday</p>
+                    <button class="btn btn-small">Claim Now</button>
+                </div>
+                <div class="bonus-card">
+                    <h3>High Roller</h3>
+                    <div class="bonus-amount">25% Cashback</div>
+                    <p>Weekly cashback for VIPs</p>
+                    <button class="btn btn-small">Claim Now</button>
+                </div>
+                <div class="bonus-card">
+                    <h3>Free Spin Frenzy</h3>
+                    <div class="bonus-amount">100 Free Spins</div>
+                    <p>New game launches</p>
+                    <button class="btn btn-small">Claim Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="games-section" id="games">
+        <div class="container">
+            <h2>Popular Slot Games</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://via.placeholder.com/300x200?text=Starburst" alt="Starburst Slot">
+                        <div class="play-overlay">
+                            <button class="play-btn">Play Now</button>
+                        </div>
+                    </div>
+                    <h3>Starburst</h3>
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://via.placeholder.com/300x200?text=Book+of+Ra" alt="Book of Ra Slot">
+                        <div class="play-overlay">
+                            <button class="play-btn">Play Now</button>
+                        </div>
+                    </div>
+                    <h3>Book of Ra</h3>
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://via.placeholder.com/300x200?text=Mega+Moolah" alt="Mega Moolah Slot">
+                        <div class="play-overlay">
+                            <button class="play-btn">Play Now</button>
+                        </div>
+                    </div>
+                    <h3>Mega Moolah</h3>
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://via.placeholder.com/300x200?text=Gonzo's+Quest" alt="Gonzo's Quest Slot">
+                        <div class="play-overlay">
+                            <button class="play-btn">Play Now</button>
+                        </div>
+                    </div>
+                    <h3>Gonzo's Quest</h3>
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Win Big?</h2>
+                <p>Join thousands of players winning real money every day!</p>
+                <button class="btn btn-primary btn-large pulse">Sign Up Now</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span>Lucky Spin</span>
+                    <div class="logo-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Games</h4>
+                        <ul>
+                            <li><a href="#">Slots</a></li>
+                            <li><a href="#">Table Games</a></li>
+                            <li><a href="#">Live Casino</a></li>
+                            <li><a href="#">New Releases</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Promotions</h4>
+                        <ul>
+                            <li><a href="#">Welcome Bonus</a></li>
+                            <li><a href="#">Free Spins</a></li>
+                            <li><a href="#">VIP Program</a></li>
+                            <li><a href="#">Tournaments</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Responsible Gaming</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Lucky Spin Casino. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-bitcoin"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="registration-modal" id="registration-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create Your Account</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number">
+                </div>
+                <button type="submit" class="btn btn-primary">Register Now</button>
             </form>
-        </div>
-        
-        <div class="social-icons">
-            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+            <div class="social-login">
+                <p>Or sign up with:</p>
+                <div class="social-icons">
+                    <button class="social-btn google"><i class="fab fa-google"></i></button>
+                    <button class="social-btn facebook"><i class="fab fa-facebook-f"></i></button>
+                    <button class="social-btn apple"><i class="fab fa-apple"></i></button>
+                </div>
+            </div>
         </div>
     </div>
-    
-    <div class="notification" id="notification">
-        Thanks for subscribing! We'll notify you when we launch.
-    </div>
-    
+
     <script>
-        // Set the date we're counting down to (2 weeks from now)
-        const countDownDate = new Date();
-        countDownDate.setDate(countDownDate.getDate() + 14);
-        
-        // Update the countdown every 1 second
-        const countdownFunction = setInterval(function() {
-            // Get today's date and time
-            const now = new Date().getTime();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
             
-            // Find the distance between now and the countdown date
-            const distance = countDownDate - now;
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
             
-            // Time calculations for days, hours, minutes and seconds
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
             
-            // Display the result
-            document.getElementById("days").innerHTML = days.toString().padStart(2, "0");
-            document.getElementById("hours").innerHTML = hours.toString().padStart(2, "0");
-            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, "0");
-            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, "0");
+            // Registration modal
+            const registerBtn = document.getElementById('register-btn');
+            const modal = document.getElementById('registration-modal');
+            const closeModal = document.querySelector('.close-modal');
             
-            // If the countdown is finished, write some text
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("days").innerHTML = "00";
-                document.getElementById("hours").innerHTML = "00";
-                document.getElementById("minutes").innerHTML = "00";
-                document.getElementById("seconds").innerHTML = "00";
+            registerBtn.addEventListener('click', function() {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Slot machine animation
+            const spinBtn = document.getElementById('spin-btn');
+            const reels = [
+                document.getElementById('reel1'),
+                document.getElementById('reel2'),
+                document.getElementById('reel3')
+            ];
+            
+            const symbols = ['7', '🍒', '🍋', '🍊', '🍇', '🔔', '💎'];
+            
+            spinBtn.addEventListener('click', function() {
+                this.disabled = true;
+                this.textContent = 'Spinning...';
+                
+                // Reset reels
+                reels.forEach(reel => {
+                    reel.textContent = '';
+                    reel.classList.remove('win');
+                });
+                
+                // Spin each reel with different durations
+                const spins = [];
+                reels.forEach((reel, index) => {
+                    spins.push(spinReel(reel, index * 500 + 1000));
+                });
+                
+                // Check for win after all reels stop
+                Promise.all(spins).then(() => {
+                    spinBtn.disabled = false;
+                    spinBtn.textContent = 'SPIN';
+                    
+                    // Check if all reels match
+                    if (reels[0].textContent === reels[1].textContent && 
+                        reels[1].textContent === reels[2].textContent) {
+                        reels.forEach(reel => reel.classList.add('win'));
+                        
+                        // Show win animation
+                        setTimeout(() => {
+                            alert(You won! Three ${reels[0].textContent}s!);
+                        }, 500);
+                    }
+                });
+            });
+            
+            function spinReel(reel, duration) {
+                return new Promise(resolve => {
+                    const startTime = Date.now();
+                    const endTime = startTime + duration;
+                    
+                    function updateReel() {
+                        const currentTime = Date.now();
+                        const remainingTime = endTime - currentTime;
+                        
+                        if (remainingTime <= 0) {
+                            // Final symbol
+                            const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+                            reel.textContent = randomSymbol;
+                            resolve();
+                        } else {
+                            // Show random symbol during spin
+                            const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+                            reel.textContent = randomSymbol;
+                            
+                            // Slow down as we approach the end
+                            const speed = Math.max(50, remainingTime / 20);
+                            setTimeout(updateReel, speed);
+                        }
+                    }
+                    
+                    updateReel();
+                });
             }
-        }, 1000);
-        
-        // Handle form submission
-        const form = document.getElementById('subscribeForm');
-        const notification = document.getElementById('notification');
-        
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
             
-            // In a real application, you would send the email to your server here
-            // For this demo, we'll just show a notification
+            // Animated jackpot counters
+            const jackpots = {
+                'mega-jackpot': 12456789,
+                'diamond-jackpot': 8245321,
+                'royal-jackpot': 5678901
+            };
             
-            // Show notification
-            notification.classList.add('show');
+            Object.keys(jackpots).forEach(id => {
+                const element = document.getElementById(id);
+                const targetAmount = jackpots[id];
+                let currentAmount = targetAmount - 1000000;
+                
+                const increment = targetAmount / 100;
+                const duration = 2000;
+                const stepTime = duration / 100;
+                
+                function updateJackpot() {
+                    currentAmount += increment;
+                    if (currentAmount < targetAmount) {
+                        element.textContent = '$' + Math.floor(currentAmount).toLocaleString();
+                        setTimeout(updateJackpot, stepTime);
+                    } else {
+                        element.textContent = '$' + targetAmount.toLocaleString();
+                    }
+                }
+                
+                // Start animation after a delay
+                setTimeout(updateJackpot, 500);
+            });
             
-            // Hide after 3 seconds
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
+            // Form submission
+            const registerForm = document.getElementById('register-form');
+            if (registerForm) {
+                registerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Registration submitted! Check your email for verification.');
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    this.reset();
+                });
+            }
             
-            // Reset form
-            form.reset();
+            // Scroll animations
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.jackpot-card, .bonus-card, .game-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state for animation
+            document.querySelectorAll('.jackpot-card, .bonus-card, .game-card').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
         });
     </script>
 </body>
