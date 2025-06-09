@@ -3,158 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightSmile Dental Clinic</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Horizon Builders | Premium Construction & Real Estate</title>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Global Styles */
         :root {
-            --primary-color: #4a9ff5;
-            --primary-light: #e6f2ff;
-            --secondary-color: #2c7be5;
-            --dark-color: #333;
-            --light-color: #fff;
-            --gray-color: #f5f7fa;
-            --text-color: #555;
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #7f8c8d;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--text-color);
             line-height: 1.6;
+            color: var(--text);
         }
-
-        h1, h2, h3, h4 {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark-color);
-        }
-
+        
         .container {
-            width: 100%;
+            width: 85%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
-
-        /* Header Styles */
-        header {
-            background-color: var(--light-color);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        .logo h1 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--dark-color);
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            background-color: var(--primary-light);
-            padding: 150px 0 100px;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--light-color);
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: var(--secondary-color);
-        }
-
-        /* Services Section */
-        .services {
+        
+        section {
             padding: 80px 0;
         }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--primary);
         }
-
-        .section-title h2 {
-            font-size: 2rem;
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
             position: relative;
-            display: inline-block;
             padding-bottom: 15px;
         }
-
-        .section-title h2::after {
+        
+        h2::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -162,359 +62,353 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: var(--primary-color);
+            background: var(--secondary);
         }
-
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background: #c0392b;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ecf0f1;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+        }
+        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 50px;
         }
-
+        
         .service-card {
-            background-color: var(--light-color);
-            border-radius: 10px;
+            background: white;
             padding: 30px;
+            border-radius: 5px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
         }
-
+        
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-
+        
         .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
+            font-size: 3rem;
+            color: var(--secondary);
             margin-bottom: 20px;
         }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-
-        /* Doctors Section */
-        .doctors {
-            padding: 80px 0;
-            background-color: var(--gray-color);
-        }
-
-        .doctors-grid {
+        
+        /* Projects Section */
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 50px;
         }
-
-        .doctor-card {
-            background-color: var(--light-color);
-            border-radius: 10px;
+        
+        .project-card {
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-        }
-
-        .doctor-img {
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             height: 250px;
-            overflow: hidden;
         }
-
-        .doctor-img img {
+        
+        .project-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.5s ease;
         }
-
-        .doctor-card:hover .doctor-img img {
+        
+        .project-card:hover img {
             transform: scale(1.1);
         }
-
-        .doctor-info {
+        
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(44, 62, 80, 0.9);
+            color: white;
             padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
         }
-
-        .doctor-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+        
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
         }
-
-        .doctor-info p.specialty {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-links a {
-            color: var(--text-color);
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Appointment Section */
-        .appointment {
-            padding: 80px 0;
-            background-color: var(--primary-light);
-        }
-
-        .appointment-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            align-items: center;
-        }
-
-        .appointment-info h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .appointment-info p {
-            margin-bottom: 30px;
-        }
-
-        .appointment-form {
-            background-color: var(--light-color);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .form-group textarea {
-            height: 100px;
-            resize: vertical;
-        }
-
+        
         /* Testimonials Section */
         .testimonials {
-            padding: 80px 0;
+            background-color: var(--light);
         }
-
+        
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 50px;
         }
-
+        
         .testimonial-card {
-            background-color: var(--light-color);
+            background: white;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 5px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-
-        .testimonial-header {
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: var(--text);
+        }
+        
+        .testimonial-author {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
         }
-
-        .testimonial-img {
+        
+        .author-img {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            overflow: hidden;
+            object-fit: cover;
             margin-right: 15px;
         }
-
-        .testimonial-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .testimonial-author h4 {
-            font-size: 1.1rem;
+        
+        .author-info h4 {
             margin-bottom: 5px;
+            font-size: 1.1rem;
         }
-
-        .testimonial-author p {
-            color: var(--primary-color);
+        
+        .author-info p {
+            margin-bottom: 0;
+            color: var(--secondary);
             font-size: 0.9rem;
         }
-
-        .rating {
-            color: #ffc107;
-            margin-bottom: 15px;
+        
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 50px auto 0;
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
         /* Footer */
         footer {
-            background-color: var(--dark-color);
-            color: var(--light-color);
-            padding: 60px 0 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 50px 0 20px;
         }
-
+        
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 30px;
+            margin-bottom: 30px;
         }
-
-        .footer-col h3 {
-            font-size: 1.2rem;
+        
+        .footer-column h3 {
+            color: white;
             margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
+            font-size: 1.3rem;
         }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-
-        .footer-col p {
-            margin-bottom: 15px;
-        }
-
-        .footer-links li {
-            list-style: none;
+        
+        .footer-column p, 
+        .footer-column a {
+            color: #bdc3c7;
             margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #bbb;
+            display: block;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
+        
+        .footer-column a:hover {
+            color: var(--secondary);
         }
-
-        .contact-info {
+        
+        .social-links {
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
+            gap: 15px;
         }
-
-        .contact-info i {
-            margin-right: 10px;
-            color: var(--primary-color);
+        
+        .social-links a {
+            font-size: 1.2rem;
+            color: #bdc3c7;
+            transition: color 0.3s ease;
         }
-
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
         .copyright {
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
             font-size: 0.9rem;
-            color: #bbb;
         }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .header-container {
-                padding: 15px 0;
-            }
-
-            nav ul li {
-                margin-left: 20px;
-            }
-        }
-
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            nav {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--light-color);
-                transition: left 0.3s;
-            }
-
-            nav.active {
-                left: 0;
-            }
-
-            nav ul {
+            .header-container {
                 flex-direction: column;
-                padding: 30px;
             }
-
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
             nav ul li {
-                margin: 15px 0;
+                margin: 0 10px;
             }
-
-            .hero {
-                padding: 120px 0 80px;
+            
+            h1 {
+                font-size: 2.5rem;
             }
-
-            .hero h2 {
-                font-size: 2rem;
-            }
-
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .btn {
-                padding: 10px 25px;
-            }
-
-            .section-title h2 {
-                font-size: 1.5rem;
-            }
-
-            .services-grid,
-            .doctors-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .appointment-container {
-                grid-template-columns: 1fr;
+            
+            section {
+                padding: 60px 0;
             }
         }
     </style>
@@ -523,20 +417,14 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo">
-                <img src="https://i.postimg.cc/KzLfpFb6/brightsmile-logo.png" alt="BrightSmile Logo">
-                <h1>BrightSmile</h1>
-            </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav id="mainNav">
+            <a href="#" class="logo">Horizon<span>Builders</span></a>
+            <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#doctors">Doctors</a></li>
-                    <li><a href="#appointment">Appointment</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -544,180 +432,113 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="container">
-            <h2>Your Smile Is Our Priority</h2>
-            <p>BrightSmile Dental Clinic provides comprehensive dental care with a gentle touch. Our experienced team is dedicated to giving you the healthy, beautiful smile you deserve.</p>
-            <a href="#appointment" class="btn">Book an Appointment</a>
+        <div class="hero-content">
+            <h1>Building Your Vision, Crafting Your Future</h1>
+            <p>Horizon Builders delivers exceptional construction and real estate services with unmatched quality and professionalism. Let us bring your dream project to life.</p>
+            <a href="#contact" class="btn">Get a Free Quote</a>
+            <a href="#services" class="btn btn-accent">Our Services</a>
         </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-            </div>
+            <h2>Our Services</h2>
+            <p class="section-subtitle">We offer comprehensive construction and real estate solutions tailored to your needs.</p>
+            
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tooth"></i>
-                    </div>
-                    <h3>General Dentistry</h3>
-                    <p>Regular check-ups, cleanings, fillings, and preventive care to maintain your oral health.</p>
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Custom Home Building</h3>
+                    <p>From concept to completion, we build homes that reflect your unique style and meet your family's needs.</p>
                 </div>
+                
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-teeth"></i>
-                    </div>
-                    <h3>Cosmetic Dentistry</h3>
-                    <p>Teeth whitening, veneers, and bonding to enhance your smile's appearance.</p>
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3>Commercial Construction</h3>
+                    <p>Expert commercial builders delivering functional, efficient spaces for businesses of all sizes.</p>
                 </div>
+                
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-teeth-open"></i>
-                    </div>
-                    <h3>Orthodontics</h3>
-                    <p>Braces and aligners to straighten teeth and correct bite issues.</p>
+                    <div class="service-icon"><i class="fas fa-hammer"></i></div>
+                    <h3>Renovations & Remodeling</h3>
+                    <p>Transform your existing space with our high-quality renovation and remodeling services.</p>
                 </div>
+                
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-toothbrush"></i>
-                    </div>
-                    <h3>Pediatric Dentistry</h3>
-                    <p>Specialized dental care for children in a friendly, comfortable environment.</p>
+                    <div class="service-icon"><i class="fas fa-city"></i></div>
+                    <h3>Real Estate Development</h3>
+                    <p>Full-service real estate development from land acquisition to project completion.</p>
                 </div>
+                
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-teeth"></i>
-                    </div>
-                    <h3>Dental Implants</h3>
-                    <p>Permanent solutions for missing teeth that look and function like natural teeth.</p>
+                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Architectural Design</h3>
+                    <p>Innovative design solutions that balance aesthetics, functionality, and budget.</p>
                 </div>
+                
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-x-ray"></i>
-                    </div>
-                    <h3>Oral Surgery</h3>
-                    <p>Tooth extractions, wisdom teeth removal, and other surgical procedures.</p>
+                    <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <h3>Project Management</h3>
+                    <p>Professional oversight to ensure your project stays on time and on budget.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Doctors Section -->
-    <section class="doctors" id="doctors">
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Doctors</h2>
-            </div>
-            <div class="doctors-grid">
-                <div class="doctor-card">
-                    <div class="doctor-img">
-                        <img src="https://i.postimg.cc/9fBFdwRK/portrait-dantist-dental-clinic-105818-94.jpg" alt="Dr. Sarah Johnson">
-                    </div>
-                    <div class="doctor-info">
-                        <h3>Dr. Sarah Johnson</h3>
-                        <p class="specialty">General Dentist</p>
-                        <p>With over 15 years of experience, Dr. Johnson specializes in preventive and restorative dentistry.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
+            <h2>Featured Projects</h2>
+            <p class="section-subtitle">Explore our portfolio of completed projects that showcase our expertise and quality.</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Modern Residence">
+                    <div class="project-overlay">
+                        <h3>Modern Residence</h3>
+                        <p>Contemporary 4-bedroom home with sustainable features</p>
                     </div>
                 </div>
-                <div class="doctor-card">
-                    <div class="doctor-img">
-                        <img src="https://i.postimg.cc/xqr2D9NL/898905.jpg" alt="Dr. Michael Chen">
-                    </div>
-                    <div class="doctor-info">
-                        <h3>Dr. Michael Chen</h3>
-                        <p class="specialty">Orthodontist</p>
-                        <p>Dr. Chen is a board-certified orthodontist specializing in braces and Invisalign treatments.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
+                
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Office Complex">
+                    <div class="project-overlay">
+                        <h3>Office Complex</h3>
+                        <p>Mixed-use development with retail and office spaces</p>
                     </div>
                 </div>
-                <div class="doctor-card">
-                    <div class="doctor-img">
-                        <img src="https://i.postimg.cc/9fBFdwRK/portrait-dantist-dental-clinic-105818-94.jpg" alt="Dr. Emily Rodriguez">
-                    </div>
-                    <div class="doctor-info">
-                        <h3>Dr. Emily Rodriguez</h3>
-                        <p class="specialty">Pediatric Dentist</p>
-                        <p>Dr. Rodriguez creates a fun, positive dental experience for children of all ages.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
+                
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Luxury Condominium">
+                    <div class="project-overlay">
+                        <h3>Luxury Condominium</h3>
+                        <p>High-end residential building with premium amenities</p>
                     </div>
                 </div>
-                <div class="doctor-card">
-                    <div class="doctor-img">
-                        <img src="https://i.postimg.cc/PJnj0twY/45743843-dentist-doctor-portrait-young-man-at-his-workplace-dental-clinic.jpg" alt="Dr. David Kim">
-                    </div>
-                    <div class="doctor-info">
-                        <h3>Dr. David Kim</h3>
-                        <p class="specialty">Oral Surgeon</p>
-                        <p>Dr. Kim performs complex dental surgeries with precision and care.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
+                
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Historic Renovation">
+                    <div class="project-overlay">
+                        <h3>Historic Renovation</h3>
+                        <p>Preservation and modernization of a landmark building</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Appointment Section -->
-    <section class="appointment" id="appointment">
-        <div class="container">
-            <div class="appointment-container">
-                <div class="appointment-info">
-                    <h2>Book Your Appointment</h2>
-                    <p>Schedule a visit with our dental professionals. We'll help you find a convenient time for your consultation or treatment.</p>
-                    <p>Our clinic hours are Monday to Friday from 8:00 AM to 6:00 PM, and Saturday from 9:00 AM to 2:00 PM.</p>
-                    <p>For emergencies, please call: <strong>(123) 456-7890</strong></p>
+                
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Community Center">
+                    <div class="project-overlay">
+                        <h3>Community Center</h3>
+                        <p>Public facility serving the local neighborhood</p>
+                    </div>
                 </div>
-                <div class="appointment-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Needed</label>
-                            <select id="service" name="service">
-                                <option value="">Select a service</option>
-                                <option value="general">General Dentistry</option>
-                                <option value="cosmetic">Cosmetic Dentistry</option>
-                                <option value="orthodontics">Orthodontics</option>
-                                <option value="pediatric">Pediatric Dentistry</option>
-                                <option value="implants">Dental Implants</option>
-                                <option value="surgery">Oral Surgery</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="date">Preferred Date</label>
-                            <input type="date" id="date" name="date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Additional Information</label>
-                            <textarea id="message" name="message"></textarea>
-                        </div>
-                        <button type="submit" class="btn">Book Appointment</button>
-                    </form>
+                
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Industrial Facility">
+                    <div class="project-overlay">
+                        <h3>Industrial Facility</h3>
+                        <p>Custom-built manufacturing plant with advanced features</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -726,67 +547,95 @@
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
-            <div class="section-title">
-                <h2>Patient Testimonials</h2>
-            </div>
+            <h2>Client Testimonials</h2>
+            <p class="section-subtitle">Hear what our clients say about working with Horizon Builders.</p>
+            
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-img">
-                            <img src="https://i.postimg.cc/9fBFdwRK/portrait-dantist-dental-clinic-105818-94.jpg" alt="Robert Johnson">
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>Robert Johnson</h4>
-                            <p>General Dentistry</p>
+                    <div class="testimonial-content">
+                        "Horizon Builders transformed our vision into reality. Their attention to detail and commitment to quality was evident throughout the entire process. We couldn't be happier with our new home."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="author-img">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Homeowner</p>
                         </div>
                     </div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"I've been coming to BrightSmile for years. The staff is always friendly and professional. Dr. Johnson makes every visit comfortable and explains everything clearly."</p>
                 </div>
+                
                 <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-img">
-                            <img src="https://i.postimg.cc/9fBFdwRK/portrait-dantist-dental-clinic-105818-94.jpg" alt="Lisa Martinez">
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>Lisa Martinez</h4>
-                            <p>Orthodontics</p>
+                    <div class="testimonial-content">
+                        "As a commercial developer, I've worked with many construction firms. Horizon stands out for their professionalism, reliability, and ability to deliver complex projects on time and within budget."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="author-img">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Commercial Developer</p>
                         </div>
                     </div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"Dr. Chen transformed my smile with Invisalign. The entire process was smooth, and the results are amazing. I couldn't be happier with my treatment!"</p>
                 </div>
+                
                 <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-img">
-                            <img src="https://i.postimg.cc/PJnj0twY/45743843-dentist-doctor-portrait-young-man-at-his-workplace-dental-clinic.jpg" alt="Thomas Wilson">
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>Thomas Wilson</h4>
-                            <p>Dental Implants</p>
+                    <div class="testimonial-content">
+                        "The renovation of our historic property was handled with such care and expertise. Horizon's team respected the building's character while modernizing it for contemporary use. Exceptional work!"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez" class="author-img">
+                        <div class="author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <p>Property Owner</p>
                         </div>
                     </div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p>"After years of discomfort with dentures, I opted for dental implants at BrightSmile. The difference is incredible - they look and feel like natural teeth."</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-subtitle">Ready to start your project? Contact us today for a free consultation.</p>
+            
+            <div class="contact-form">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service</option>
+                            <option value="custom-home">Custom Home Building</option>
+                            <option value="commercial">Commercial Construction</option>
+                            <option value="renovation">Renovations & Remodeling</option>
+                            <option value="development">Real Estate Development</option>
+                            <option value="design">Architectural Design</option>
+                            <option value="management">Project Management</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
@@ -795,73 +644,50 @@
     <footer>
         <div class="container">
             <div class="footer-container">
-                <div class="footer-col">
-                    <h3>BrightSmile</h3>
-                    <p>Providing exceptional dental care with compassion and expertise since 2005.</p>
-                    <p>Our mission is to create healthy, beautiful smiles that last a lifetime.</p>
+                <div class="footer-column">
+                    <h3>Horizon Builders</h3>
+                    <p>Building excellence since 1995. We're committed to quality construction and exceptional customer service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
-                <div class="footer-col">
+                
+                <div class="footer-column">
                     <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#doctors">Our Doctors</a></li>
-                        <li><a href="#appointment">Appointments</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                    </ul>
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
                 </div>
-                <div class="footer-col">
-                    <h3>Contact Us</h3>
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>123 Dental Avenue, Health City, HC 12345</p>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <p>(123) 456-7890</p>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <p>info@brightsmile.com</p>
-                    </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <a href="#">Custom Home Building</a>
+                    <a href="#">Commercial Construction</a>
+                    <a href="#">Renovations & Remodeling</a>
+                    <a href="#">Real Estate Development</a>
+                    <a href="#">Architectural Design</a>
                 </div>
-                <div class="footer-col">
-                    <h3>Clinic Hours</h3>
-                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                    <p>Saturday: 9:00 AM - 2:00 PM</p>
-                    <p>Sunday: Closed</p>
-                    <p>Emergency services available</p>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p>123 Builder's Way, Suite 100</p>
+                    <p>Construction City, CC 90210</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Email: info@horizonbuilders.com</p>
+                    <p>Hours: Mon-Fri 8am-5pm</p>
                 </div>
             </div>
+            
             <div class="copyright">
-                <p>&copy; 2023 BrightSmile Dental Clinic. All Rights Reserved.</p>
+                <p>&copy; 2023 Horizon Builders. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                }
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
