@@ -3,1370 +3,730 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucky Spin Casino - Win Big!</title>
+    <title>Taskify - Your Productivity App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Global Styles */
+        /* Base Styles */
         :root {
-            --primary-color: #ff5722;
-            --secondary-color: #ff9800;
-            --dark-color: #1a1a2e;
-            --light-color: #f8f9fa;
-            --success-color: #4caf50;
-            --info-color: #2196f3;
-            --warning-color: #ffc107;
-            --danger-color: #f44336;
-            --jackpot-color: #ffd700;
-            --text-color: #333;
-            --text-light: #f8f9fa;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-color);
-            background-color: #f5f5f5;
             line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
         }
-
+        
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
-        .highlight {
-            color: var(--primary-color);
-            font-weight: bold;
+        
+        section {
+            padding: 60px 0;
         }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #e64a19;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-        }
-
-        .btn-secondary {
-            background-color: var(--dark-color);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background-color: #16213e;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-        }
-
-        .btn-small {
-            padding: 8px 16px;
-            font-size: 14px;
-        }
-
-        .btn-large {
-            padding: 15px 30px;
-            font-size: 18px;
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(255, 87, 34, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 87, 34, 0);
-            }
-        }
-
-        /* Header Styles */
-        header {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        .logo-icon {
-            margin-left: 10px;
-            color: var(--primary-color);
-            animation: spin 5s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            bottom: -5px;
-            left: 0;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-
-        .hamburger .line {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 5px;
-            transition: var(--transition);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 150px 0 80px;
-            background: linear-gradient(135deg, var(--dark-color) 0%, #16213e 100%);
-            color: white;
-            overflow: hidden;
-        }
-
-        .hero .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .hero-content {
-            flex: 1;
-            min-width: 300px;
-            padding-right: 20px;
-        }
-
-        .hero-content h1 {
-            font-size: 48px;
+        
+        h1, h2, h3 {
             margin-bottom: 20px;
             line-height: 1.2;
         }
-
-        .hero-content p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            opacity: 0.9;
+        
+        h1 {
+            font-size: 2.5rem;
         }
-
-        .cta-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
-            position: relative;
-            margin-top: 30px;
-        }
-
-        .slot-machine {
-            display: flex;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .slot-reel {
-            width: 80px;
-            height: 80px;
-            background: white;
-            margin: 0 5px;
-            border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 36px;
-            font-weight: bold;
-            color: var(--dark-color);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .slot-reel.win {
-            animation: winSpin 0.5s 3;
-        }
-
-        @keyframes winSpin {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-
-        .spin-btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin-top: 20px;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .spin-btn:hover {
-            background: #e64a19;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Jackpot Section */
-        .jackpot-section {
-            padding: 80px 0;
-            background-color: white;
-        }
-
-        .jackpot-section h2 {
+        
+        h2 {
+            font-size: 2rem;
             text-align: center;
-            margin-bottom: 50px;
-            font-size: 36px;
-            color: var(--dark-color);
         }
-
-        .jackpot-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
+        
+        h3 {
+            font-size: 1.5rem;
         }
-
-        .jackpot-card {
-            flex: 1;
-            min-width: 250px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .jackpot-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .jackpot-icon {
-            font-size: 40px;
-            color: var(--primary-color);
+        
+        p {
             margin-bottom: 15px;
         }
-
-        .jackpot-card h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: var(--dark-color);
+        
+        img {
+            max-width: 100%;
+            height: auto;
         }
-
-        .jackpot-amount {
-            font-size: 28px;
-            font-weight: bold;
-            color: var(--jackpot-color);
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-menu.active {
+            display: block;
+        }
+        
+        .nav-menu a {
+            display: block;
+            padding: 10px 0;
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding-top: 120px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .hero-text {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .app-preview {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .app-preview img {
+            display: inline-block;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .download-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .download-btn {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            background-color: var(--dark);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .download-btn i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        .download-btn span {
+            display: block;
+            font-size: 0.8rem;
+        }
+        
+        .download-btn strong {
+            display: block;
+            font-size: 1rem;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: var(--light);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
             margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            animation: glow 2s infinite alternate;
         }
-
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
-            }
-            to {
-                text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
-            }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: #f8f9fa;
         }
-
-        .progress-label {
-            font-size: 14px;
-            color: #666;
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
             margin-bottom: 5px;
         }
-
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background: #e0e0e0;
-            border-radius: 5px;
-            overflow: hidden;
+        
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin: 0;
         }
-
-        .progress-fill {
-            height: 100%;
-            width: 80%;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            border-radius: 5px;
-            transition: width 1s ease;
-        }
-
-        /* Bonus Section */
-        .bonus-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
-        }
-
-        .bonus-section h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 36px;
-            color: var(--dark-color);
-        }
-
-        .bonus-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .bonus-card {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .bonus-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .bonus-highlight {
-            border: 2px solid var(--primary-color);
-            transform: scale(1.05);
-        }
-
-        .bonus-badge {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: var(--danger-color);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 14px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .bonus-card h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: var(--dark-color);
-        }
-
-        .bonus-amount {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .bonus-card p {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        /* Games Section */
-        .games-section {
-            padding: 80px 0;
+        
+        /* Contact */
+        .contact {
             background-color: white;
         }
-
-        .games-section h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 36px;
-            color: var(--dark-color);
-        }
-
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .game-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .game-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .game-image {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .game-image img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .game-card:hover .game-image img {
-            transform: scale(1.05);
-        }
-
-        .play-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+        
+        .contact-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .contact-info {
+            margin-bottom: 40px;
+        }
+        
+        .contact-info p {
+            display: flex;
             align-items: center;
-            opacity: 0;
-            transition: var(--transition);
+            margin-bottom: 15px;
         }
-
-        .game-card:hover .play-overlay {
-            opacity: 1;
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary);
+            font-size: 1.2rem;
+            width: 25px;
         }
-
-        .play-btn {
-            padding: 10px 20px;
-            background: var(--primary-color);
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-form button {
+            background-color: var(--primary);
             color: white;
             border: none;
-            border-radius: 4px;
-            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
+            transition: background-color 0.3s ease;
         }
-
-        .play-btn:hover {
-            background: #e64a19;
-            transform: scale(1.05);
+        
+        .contact-form button:hover {
+            background-color: var(--secondary);
         }
-
-        .game-card h3 {
-            padding: 15px;
-            font-size: 18px;
-            text-align: center;
-        }
-
-        .game-rating {
-            padding: 0 15px 15px;
-            color: var(--warning-color);
-            text-align: center;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--dark-color) 0%, #16213e 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .cta-content h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .cta-content p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
+        
         /* Footer */
         footer {
-            background: var(--dark-color);
+            background-color: var(--dark);
             color: white;
-            padding: 50px 0 0;
+            padding: 40px 0 20px;
         }
-
-        .footer-content {
+        
+        .footer-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
             margin-bottom: 30px;
         }
-
-        .footer-logo {
+        
+        .social-links a {
             display: flex;
             align-items: center;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .link-group {
-            min-width: 150px;
-        }
-
-        .link-group h4 {
-            font-size: 18px;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .link-group ul {
-            list-style: none;
-        }
-
-        .link-group li {
-            margin-bottom: 10px;
-        }
-
-        .link-group a {
-            color: #ddd;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .link-group a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 20px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .payment-methods {
-            display: flex;
-            gap: 15px;
-            font-size: 24px;
-        }
-
-        .payment-methods i {
-            opacity: 0.7;
-            transition: var(--transition);
-        }
-
-        .payment-methods i:hover {
-            opacity: 1;
-            color: var(--primary-color);
-        }
-
-        /* Registration Modal */
-        .registration-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
             justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 500px;
-            position: relative;
-            animation: modalFadeIn 0.3s;
-        }
-
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 24px;
-            cursor: pointer;
-            color: #666;
-            transition: var(--transition);
-        }
-
-        .close-modal:hover {
-            color: var(--danger-color);
-            transform: rotate(90deg);
-        }
-
-        .modal-content h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus {
-            border-color: var(--primary-color);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.2);
-        }
-
-        .social-login {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .social-login p {
-            margin-bottom: 15px;
-            color: #666;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-btn {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            border: none;
-            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.1);
             color: white;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin: 0 10px;
+            transition: all 0.3s ease;
         }
-
-        .social-btn.google {
-            background: #db4437;
-        }
-
-        .social-btn.facebook {
-            background: #4267b2;
-        }
-
-        .social-btn.apple {
-            background: #000;
-        }
-
-        .social-btn:hover {
+        
+        .social-links a:hover {
+            background-color: var(--primary);
             transform: translateY(-3px);
-            box-shadow: var(--shadow);
         }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero .container {
-                flex-direction: column;
-                text-align: center;
+        
+        .copyright {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Media Queries */
+        @media (min-width: 768px) {
+            .nav-toggle {
+                display: none;
+            }
+            
+            .nav-menu {
+                display: flex;
+                position: static;
+                width: auto;
+                background: none;
+                box-shadow: none;
+                padding: 0;
+            }
+            
+            .nav-menu a {
+                padding: 0 15px;
             }
             
             .hero-content {
-                padding-right: 0;
-                margin-bottom: 40px;
-            }
-            
-            .cta-buttons {
-                justify-content: center;
-            }
-            
-            .jackpot-card {
-                min-width: 200px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: var(--dark-color);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: var(--transition);
-                z-index: 999;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .hamburger {
-                display: block;
-            }
-            
-            .hamburger.active .line:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-            
-            .hamburger.active .line:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .hamburger.active .line:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-            
-            .hero-content h1 {
-                font-size: 36px;
-            }
-            
-            .hero-content p {
-                font-size: 18px;
-            }
-            
-            .jackpot-container {
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: space-between;
                 align-items: center;
             }
             
-            .jackpot-card {
-                width: 100%;
-                max-width: 350px;
-                margin-bottom: 20px;
+            .hero-text {
+                text-align: left;
+                flex: 1;
+                padding-right: 40px;
+                margin-bottom: 0;
             }
             
-            .footer-links {
-                flex-direction: column;
-                gap: 30px;
+            .hero-text p {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .app-preview {
+                flex: 1;
+                max-width: 400px;
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .contact-info {
+                flex: 1;
+                padding-right: 40px;
+                margin-bottom: 0;
+            }
+            
+            .contact-form {
+                flex: 1;
             }
         }
-
-        @media (max-width: 576px) {
-            .hero {
-                padding: 120px 0 60px;
+        
+        @media (min-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
             
-            .hero-content h1 {
-                font-size: 30px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .slot-reel {
-                width: 60px;
-                height: 60px;
-                font-size: 28px;
-            }
-            
-            .modal-content {
-                padding: 20px;
+            .testimonial-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <span>Lucky Spin</span>
-                    <div class="logo-icon">
-                        <i class="fas fa-dice"></i>
-                    </div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#games">Games</a></li>
-                    <li><a href="#bonuses">Bonuses</a></li>
-                    <li><a href="#jackpots">Jackpots</a></li>
-                </ul>
-                <div class="hamburger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
+        <div class="container header-container">
+            <a href="#" class="logo">Taskify</a>
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-menu">
+                <a href="#features">Features</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="btn btn-outline">Download</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero" id="home">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Spin to Win <span class="highlight">Big!</span></h1>
-                <p>Join now and get a <span class="highlight">200% Welcome Bonus</span> up to $1000 on your first deposit!</p>
-                <div class="cta-buttons">
-                    <button class="btn btn-primary pulse" id="register-btn">Register Now</button>
-                    <button class="btn btn-secondary">Learn More</button>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="slot-machine">
-                    <div class="slot-reel" id="reel1">7</div>
-                    <div class="slot-reel" id="reel2">7</div>
-                    <div class="slot-reel" id="reel3">7</div>
-                </div>
-                <button class="spin-btn" id="spin-btn">SPIN</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="jackpot-section" id="jackpots">
-        <div class="container">
-            <h2>Current Jackpots</h2>
-            <div class="jackpot-container">
-                <div class="jackpot-card">
-                    <div class="jackpot-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3>Mega Fortune</h3>
-                    <div class="jackpot-amount" id="mega-jackpot">$12,456,789</div>
-                    <div class="progress-label">Growing fast!</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
+                <div class="hero-text">
+                    <h1>Organize Your Life with Taskify</h1>
+                    <p>The ultimate productivity app that helps you manage tasks, set reminders, and achieve your goals with ease.</p>
+                    <div class="download-buttons">
+                        <a href="#" class="download-btn">
+                            <i class="fab fa-apple"></i>
+                            <div>
+                                <span>Download on the</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="download-btn">
+                            <i class="fab fa-google-play"></i>
+                            <div>
+                                <span>Get it on</span>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="jackpot-card">
-                    <div class="jackpot-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3>Diamond Dreams</h3>
-                    <div class="jackpot-amount" id="diamond-jackpot">$8,245,321</div>
-                    <div class="progress-label">Hit soon!</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 65%"></div>
-                    </div>
-                </div>
-                <div class="jackpot-card">
-                    <div class="jackpot-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>Royal Riches</h3>
-                    <div class="jackpot-amount" id="royal-jackpot">$5,678,901</div>
-                    <div class="progress-label">New record!</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 45%"></div>
-                    </div>
+                <div class="app-preview">
+                    <img src="https://i.postimg.cc/2ypdnvNh/Untitled-design-5-300x141.png" alt="Taskify App Preview">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bonus-section" id="bonuses">
+    <!-- Features Section -->
+    <section class="features" id="features">
         <div class="container">
-            <h2>Exclusive Bonuses</h2>
-            <div class="bonus-grid">
-                <div class="bonus-card bonus-highlight">
-                    <div class="bonus-badge">HOT</div>
-                    <h3>Welcome Package</h3>
-                    <div class="bonus-amount">200% up to $1000</div>
-                    <p>+ 50 Free Spins on your first deposit</p>
-                    <button class="btn btn-small">Claim Now</button>
+            <h2>Amazing Features</h2>
+            <p class="text-center">Taskify comes packed with powerful features to boost your productivity</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Task Management</h3>
+                    <p>Easily create, organize, and prioritize your tasks with our intuitive interface.</p>
                 </div>
-                <div class="bonus-card">
-                    <h3>Weekend Reload</h3>
-                    <div class="bonus-amount">50% up to $500</div>
-                    <p>Every Friday to Sunday</p>
-                    <button class="btn btn-small">Claim Now</button>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Smart Reminders</h3>
+                    <p>Never miss a deadline with customizable reminders and notifications.</p>
                 </div>
-                <div class="bonus-card">
-                    <h3>High Roller</h3>
-                    <div class="bonus-amount">25% Cashback</div>
-                    <p>Weekly cashback for VIPs</p>
-                    <button class="btn btn-small">Claim Now</button>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Progress Tracking</h3>
+                    <p>Visualize your productivity with detailed statistics and progress reports.</p>
                 </div>
-                <div class="bonus-card">
-                    <h3>Free Spin Frenzy</h3>
-                    <div class="bonus-amount">100 Free Spins</div>
-                    <p>New game launches</p>
-                    <button class="btn btn-small">Claim Now</button>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Cross-Platform Sync</h3>
+                    <p>Access your tasks from any device with seamless cloud synchronization.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Team Collaboration</h3>
+                    <p>Share tasks and projects with your team for better coordination.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your data is encrypted and protected with enterprise-grade security.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="games-section" id="games">
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
         <div class="container">
-            <h2>Popular Slot Games</h2>
-            <div class="games-grid">
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="https://via.placeholder.com/300x200?text=Starburst" alt="Starburst Slot">
-                        <div class="play-overlay">
-                            <button class="play-btn">Play Now</button>
+            <h2>What Our Users Say</h2>
+            <p class="text-center">Don't just take our word for it - hear from our satisfied users</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Taskify has completely transformed how I organize my work. I'm twice as productive now!"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Marketing Director</p>
                         </div>
                     </div>
-                    <h3>Starburst</h3>
-                    <div class="game-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
                 </div>
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="https://via.placeholder.com/300x200?text=Book+of+Ra" alt="Book of Ra Slot">
-                        <div class="play-overlay">
-                            <button class="play-btn">Play Now</button>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The clean interface and powerful features make this the best task manager I've ever used."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Software Developer</p>
                         </div>
                     </div>
-                    <h3>Book of Ra</h3>
-                    <div class="game-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
                 </div>
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="https://via.placeholder.com/300x200?text=Mega+Moolah" alt="Mega Moolah Slot">
-                        <div class="play-overlay">
-                            <button class="play-btn">Play Now</button>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "I've tried dozens of productivity apps, but Taskify is the only one that actually helped me stay organized."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez">
+                        <div class="author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <p>Small Business Owner</p>
                         </div>
-                    </div>
-                    <h3>Mega Moolah</h3>
-                    <div class="game-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="https://via.placeholder.com/300x200?text=Gonzo's+Quest" alt="Gonzo's Quest Slot">
-                        <div class="play-overlay">
-                            <button class="play-btn">Play Now</button>
-                        </div>
-                    </div>
-                    <h3>Gonzo's Quest</h3>
-                    <div class="game-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Win Big?</h2>
-                <p>Join thousands of players winning real money every day!</p>
-                <button class="btn btn-primary btn-large pulse">Sign Up Now</button>
+            <h2>Get In Touch</h2>
+            <p class="text-center">Have questions or feedback? We'd love to hear from you!</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Productivity St, San Francisco, CA 94107</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> support@taskify.com</p>
+                    <p><i class="fas fa-clock"></i> Monday - Friday: 9:00 AM - 6:00 PM</p>
+                </div>
+                
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject">
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span>Lucky Spin</span>
-                    <div class="logo-icon">
-                        <i class="fas fa-dice"></i>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Games</h4>
-                        <ul>
-                            <li><a href="#">Slots</a></li>
-                            <li><a href="#">Table Games</a></li>
-                            <li><a href="#">Live Casino</a></li>
-                            <li><a href="#">New Releases</a></li>
-                        </ul>
-                    </div>
-                    <div class="link-group">
-                        <h4>Promotions</h4>
-                        <ul>
-                            <li><a href="#">Welcome Bonus</a></li>
-                            <li><a href="#">Free Spins</a></li>
-                            <li><a href="#">VIP Program</a></li>
-                            <li><a href="#">Tournaments</a></li>
-                        </ul>
-                    </div>
-                    <div class="link-group">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Responsible Gaming</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="container footer-container">
+            <a href="#" class="footer-logo">Taskify</a>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Lucky Spin Casino. All rights reserved.</p>
-                <div class="payment-methods">
-                    <i class="fab fa-cc-visa"></i>
-                    <i class="fab fa-cc-mastercard"></i>
-                    <i class="fab fa-cc-paypal"></i>
-                    <i class="fab fa-bitcoin"></i>
-                </div>
-            </div>
+            
+            <p class="copyright">© 2023 Taskify. All rights reserved.</p>
         </div>
     </footer>
 
-    <div class="registration-modal" id="registration-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Create Your Account</h2>
-            <form id="register-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Phone Number">
-                </div>
-                <button type="submit" class="btn btn-primary">Register Now</button>
-            </form>
-            <div class="social-login">
-                <p>Or sign up with:</p>
-                <div class="social-icons">
-                    <button class="social-btn google"><i class="fab fa-google"></i></button>
-                    <button class="social-btn facebook"><i class="fab fa-facebook-f"></i></button>
-                    <button class="social-btn apple"><i class="fab fa-apple"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            
-            hamburger.addEventListener('click', function() {
-                this.classList.toggle('active');
-                navLinks.classList.toggle('active');
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
             });
-            
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 70,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Close mobile menu if open
-                        hamburger.classList.remove('active');
-                        navLinks.classList.remove('active');
-                    }
-                });
-            });
-            
-            // Registration modal
-            const registerBtn = document.getElementById('register-btn');
-            const modal = document.getElementById('registration-modal');
-            const closeModal = document.querySelector('.close-modal');
-            
-            registerBtn.addEventListener('click', function() {
-                modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            });
-            
-            closeModal.addEventListener('click', function() {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-            
-            window.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
-            
-            // Slot machine animation
-            const spinBtn = document.getElementById('spin-btn');
-            const reels = [
-                document.getElementById('reel1'),
-                document.getElementById('reel2'),
-                document.getElementById('reel3')
-            ];
-            
-            const symbols = ['7', '🍒', '🍋', '🍊', '🍇', '🔔', '💎'];
-            
-            spinBtn.addEventListener('click', function() {
-                this.disabled = true;
-                this.textContent = 'Spinning...';
-                
-                // Reset reels
-                reels.forEach(reel => {
-                    reel.textContent = '';
-                    reel.classList.remove('win');
-                });
-                
-                // Spin each reel with different durations
-                const spins = [];
-                reels.forEach((reel, index) => {
-                    spins.push(spinReel(reel, index * 500 + 1000));
-                });
-                
-                // Check for win after all reels stop
-                Promise.all(spins).then(() => {
-                    spinBtn.disabled = false;
-                    spinBtn.textContent = 'SPIN';
-                    
-                    // Check if all reels match
-                    if (reels[0].textContent === reels[1].textContent && 
-                        reels[1].textContent === reels[2].textContent) {
-                        reels.forEach(reel => reel.classList.add('win'));
-                        
-                        // Show win animation
-                        setTimeout(() => {
-                            alert(You won! Three ${reels[0].textContent}s!);
-                        }, 500);
-                    }
-                });
-            });
-            
-            function spinReel(reel, duration) {
-                return new Promise(resolve => {
-                    const startTime = Date.now();
-                    const endTime = startTime + duration;
-                    
-                    function updateReel() {
-                        const currentTime = Date.now();
-                        const remainingTime = endTime - currentTime;
-                        
-                        if (remainingTime <= 0) {
-                            // Final symbol
-                            const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
-                            reel.textContent = randomSymbol;
-                            resolve();
-                        } else {
-                            // Show random symbol during spin
-                            const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
-                            reel.textContent = randomSymbol;
-                            
-                            // Slow down as we approach the end
-                            const speed = Math.max(50, remainingTime / 20);
-                            setTimeout(updateReel, speed);
-                        }
-                    }
-                    
-                    updateReel();
-                });
-            }
-            
-            // Animated jackpot counters
-            const jackpots = {
-                'mega-jackpot': 12456789,
-                'diamond-jackpot': 8245321,
-                'royal-jackpot': 5678901
-            };
-            
-            Object.keys(jackpots).forEach(id => {
-                const element = document.getElementById(id);
-                const targetAmount = jackpots[id];
-                let currentAmount = targetAmount - 1000000;
-                
-                const increment = targetAmount / 100;
-                const duration = 2000;
-                const stepTime = duration / 100;
-                
-                function updateJackpot() {
-                    currentAmount += increment;
-                    if (currentAmount < targetAmount) {
-                        element.textContent = '$' + Math.floor(currentAmount).toLocaleString();
-                        setTimeout(updateJackpot, stepTime);
-                    } else {
-                        element.textContent = '$' + targetAmount.toLocaleString();
-                    }
-                }
-                
-                // Start animation after a delay
-                setTimeout(updateJackpot, 500);
-            });
-            
-            // Form submission
-            const registerForm = document.getElementById('register-form');
-            if (registerForm) {
-                registerForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Registration submitted! Check your email for verification.');
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                    this.reset();
-                });
-            }
-            
-            // Scroll animations
-            const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.jackpot-card, .bonus-card, .game-card');
-                
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.3;
-                    
-                    if (elementPosition < screenPosition) {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateY(0)';
-                    }
-                });
-            };
-            
-            // Set initial state for animation
-            document.querySelectorAll('.jackpot-card, .bonus-card, .game-card').forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            });
-            
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll(); // Run once on load
         });
     </script>
 </body>
