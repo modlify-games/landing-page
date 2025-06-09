@@ -3,631 +3,672 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Wars - Epic Battle Game</title>
+    <title>PrimeService - Business Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Global Styles */
         :root {
-            --primary: #6c5ce7;
-            --primary-dark: #5649c0;
-            --secondary: #00cec9;
-            --dark: #1e272e;
-            --darker: #1a2026;
-            --light: #f5f6fa;
-            --gray: #a4b0be;
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-color: #1f2937;
+            --light-color: #f9fafb;
+            --dark-color: #111827;
+            --gray-color: #6b7280;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: var(--dark);
-            color: var(--light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
+            color: var(--text-color);
+            background-color: var(--light-color);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: rgba(30, 39, 46, 0.9);
-            position: fixed;
+        .container {
             width: 100%;
-            z-index: 1000;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
+        section {
+            padding: 80px 0;
         }
 
-        .logo-icon {
-            font-size: 2rem;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--light);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 0 2rem;
-            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--primary) 0%, rgba(108, 92, 231, 0.1) 70%);
-            top: -200px;
-            right: -200px;
-            z-index: 1;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--secondary) 0%, rgba(0, 206, 201, 0.1) 70%);
-            bottom: -100px;
-            left: -100px;
-            z-index: 1;
-        }
-
-        .hero-content {
-            max-width: 600px;
-            z-index: 2;
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
+        h1, h2, h3 {
             margin-bottom: 1rem;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            line-height: 1.2;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: var(--gray);
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         .btn {
             display: inline-block;
-            padding: 0.8rem 2rem;
-            background-color: var(--primary);
+            padding: 12px 30px;
+            background-color: var(--primary-color);
             color: white;
-            border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            font-size: 1rem;
         }
 
         .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
         }
 
-        .btn-secondary {
+        .btn-outline {
             background-color: transparent;
-            border: 2px solid var(--primary);
-            margin-left: 1rem;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
         }
 
-        .btn-secondary:hover {
-            background-color: rgba(108, 92, 231, 0.1);
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f4ff, #e6f0ff);
+            padding: 150px 0 80px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
         }
 
         .hero-image {
-            position: absolute;
-            right: 5%;
-            width: 50%;
-            max-width: 700px;
-            z-index: 2;
-            animation: float 6s ease-in-out infinite;
+            flex: 1;
+            min-width: 300px;
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
         }
 
         /* Features Section */
-        .section {
-            padding: 5rem 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-        }
-
-        .section-title span {
-            color: var(--primary);
-        }
-
         .features {
+            background-color: white;
+        }
+
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 30px;
         }
 
         .feature-card {
-            background-color: var(--darker);
-            padding: 2rem;
+            background-color: var(--light-color);
             border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-            border-bottom: 3px solid var(--primary);
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .feature-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        /* Screenshots Section */
-        .screenshots {
-            background-color: var(--darker);
-        }
-
-        .screenshot-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .screenshot-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-            height: 200px;
-        }
-
-        .screenshot-item:hover {
-            transform: scale(1.05);
-        }
-
-        .screenshot-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .screenshot-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* CTA Section */
-        .cta {
-            text-align: center;
-            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta::before {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--primary) 0%, rgba(108, 92, 231, 0.1) 70%);
-            top: 50%;
-            left: 10%;
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-
-        .cta::after {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--secondary) 0%, rgba(0, 206, 201, 0.1) 70%);
-            bottom: 20%;
-            right: 10%;
-            z-index: 1;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .cta h2 {
             font-size: 2.5rem;
+            color: var(--primary-color);
             margin-bottom: 1.5rem;
         }
 
-        .cta p {
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #f0f4ff, #e6f0ff);
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details {
             margin-bottom: 2rem;
-            color: var(--gray);
-            font-size: 1.1rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            width: 20px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
         }
 
         /* Footer */
         footer {
-            background-color: var(--darker);
-            padding: 3rem 2rem;
-            text-align: center;
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
         }
 
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: var(--primary);
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
         }
 
         .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
         }
 
         .footer-links a {
-            color: var(--gray);
+            color: #d1d5db;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: var(--primary);
+            color: white;
         }
 
         .social-links {
             display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 15px;
         }
 
         .social-links a {
-            color: var(--light);
-            font-size: 1.5rem;
-            transition: color 0.3s, transform 0.3s;
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
         }
 
         .social-links a:hover {
-            color: var(--primary);
-            transform: translateY(-3px);
+            color: var(--accent-color);
         }
 
         .copyright {
-            color: var(--gray);
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
             font-size: 0.9rem;
         }
 
         /* Responsive Styles */
         @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
             }
 
-            .hero-image {
-                width: 45%;
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero p {
+                max-width: 100%;
             }
         }
 
         @media (max-width: 768px) {
-            nav ul {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background-color: var(--darker);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 2rem;
-                transition: left 0.3s;
+            section {
+                padding: 60px 0;
             }
 
-            nav ul.active {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
                 left: 0;
             }
 
-            .mobile-menu-btn {
-                display: block;
+            .nav-links li {
+                margin: 0 0 30px 0;
             }
 
             .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 100px;
-            }
-
-            .hero-content {
-                max-width: 100%;
-                margin-bottom: 3rem;
-            }
-
-            .hero-image {
-                position: relative;
-                right: auto;
-                width: 80%;
-                margin: 0 auto;
-            }
-
-            .hero::before, .hero::after {
-                display: none;
-            }
-
-            .btn {
-                display: block;
-                width: fit-content;
-                margin: 0 auto 1rem;
-            }
-
-            .btn-secondary {
-                margin-left: auto;
+                padding: 120px 0 60px;
             }
         }
 
         @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.2rem;
+            section {
+                padding: 50px 0;
             }
 
-            .section-title {
+            h1 {
                 font-size: 2rem;
             }
 
-            .feature-card {
-                padding: 1.5rem;
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
             }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="logo">
-            <span class="logo-icon"><i class="fas fa-gamepad"></i></span>
-            <span>Nexus Wars</span>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">PrimeService</a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="btn btn-outline">Login</a></li>
+                </ul>
+            </nav>
         </div>
-        <button class="mobile-menu-btn" id="mobileMenuBtn">
-            <i class="fas fa-bars"></i>
-        </button>
-        <nav>
-            <ul id="navMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#screenshots">Screenshots</a></li>
-                <li><a href="#download">Download</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Experience The Ultimate Battle</h1>
-            <p>Join millions of players worldwide in the most epic multiplayer battle arena. Strategize, conquer, and dominate the Nexus in this fast-paced action game.</p>
-            <div class="hero-buttons">
-                <a href="#download" class="btn">Download Now</a>
-                <a href="#features" class="btn btn-secondary">Learn More</a>
-            </div>
-        </div>
-        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Nexus Wars Game Preview" class="hero-image">
-    </section>
-
-    <section class="section" id="features">
-        <h2 class="section-title">Game <span>Features</span></h2>
-        <div class="features">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-users"></i>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transform Your Business With Our Solutions</h1>
+                    <p>We provide innovative services to help your business grow and succeed in today's competitive market. Our team of experts is ready to assist you.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn">Get Started</a>
+                        <a href="#features" class="btn btn-outline">Learn More</a>
+                    </div>
                 </div>
-                <h3>Multiplayer Battles</h3>
-                <p>Team up with friends or compete against players worldwide in real-time 5v5 battles.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-chess"></i>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Business team working">
                 </div>
-                <h3>Strategic Gameplay</h3>
-                <p>Develop unique strategies with hundreds of character combinations and skill builds.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-trophy"></i>
-                </div>
-                <h3>Competitive Ranking</h3>
-                <p>Climb the leaderboards and prove your skills in our competitive ranked system.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <h3>Customization</h3>
-                <p>Personalize your heroes with unique skins, emotes, and victory animations.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-sync-alt"></i>
-                </div>
-                <h3>Regular Updates</h3>
-                <p>New heroes, maps, and events added regularly to keep the gameplay fresh.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <h3>Voice Chat</h3>
-                <p>Coordinate with your team using our built-in voice chat system.</p>
             </div>
         </div>
     </section>
 
-    <section class="section screenshots" id="screenshots">
-        <h2 class="section-title">Game <span>Screenshots</span></h2>
-        <div class="screenshot-grid">
-            <div class="screenshot-item">
-                <img src="https://images.unsplash.com/photo-1551103782-8ab07afd45c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Game Screenshot 1">
-            </div>
-            <div class="screenshot-item">
-                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Game Screenshot 2">
-            </div>
-            <div class="screenshot-item">
-                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Game Screenshot 3">
-            </div>
-            <div class="screenshot-item">
-                <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Game Screenshot 4">
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Why Choose Our Services</h2>
+            <p class="text-center">We deliver exceptional value through our comprehensive service offerings</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Growth Strategies</h3>
+                    <p>Customized growth plans tailored to your business needs and market conditions to maximize your potential.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>Our experienced professionals bring years of industry knowledge to help solve your business challenges.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovative Solutions</h3>
+                    <p>Cutting-edge approaches that keep you ahead of competitors and adapt to changing market trends.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock assistance to ensure your business operations run smoothly at all times.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Data Security</h3>
+                    <p>Robust security measures to protect your sensitive business information and customer data.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Cost Effective</h3>
+                    <p>High-value services designed to deliver maximum ROI without compromising on quality.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section cta" id="download">
-        <div class="cta-content">
-            <h2>Ready to Join the Battle?</h2>
-            <p>Download Nexus Wars now and start your journey to become the ultimate champion. Available on PC, PlayStation, and Xbox.</p>
-            <div class="hero-buttons">
-                <a href="#" class="btn"><i class="fab fa-windows"></i> Download for PC</a>
-                <a href="#" class="btn btn-secondary"><i class="fas fa-cloud-download-alt"></i> Other Platforms</a>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="text-center">Have questions or ready to get started? Contact us today!</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Business Ave, Suite 500, New York, NY 10001</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@primeservice.com</p>
+                        <p><i class="fas fa-clock"></i> Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    </div>
+                    <div class="social-media">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" class="form-control">
+                                <option value="">Select a service</option>
+                                <option value="consulting">Business Consulting</option>
+                                <option value="marketing">Digital Marketing</option>
+                                <option value="development">Web Development</option>
+                                <option value="support">IT Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <div class="footer-logo">Nexus Wars</div>
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#features">Features</a>
-            <a href="#screenshots">Screenshots</a>
-            <a href="#download">Download</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Support</a>
-        </div>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-discord"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="copyright">
-            &copy; 2023 Nexus Wars. All rights reserved.
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PrimeService</h3>
+                    <p>Helping businesses grow and succeed through innovative solutions and expert guidance.</p>
+                    <div class="social-links" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Business Consulting</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">IT Support</a></li>
+                        <li><a href="#">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" class="form-control" style="margin-top: 10px;">
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 PrimeService. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script>
         // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
 
         // Close mobile menu when clicking on a link
-        document.querySelectorAll('#navMenu a').forEach(link => {
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                navLinks.classList.remove('active');
             });
         });
 
-        // Smooth scroll for anchor links
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -637,22 +678,53 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
                     window.scrollTo({
-                        top: targetElement.offsetTop - 70,
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Add shadow to header on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
-            } else {
-                header.style.boxShadow = 'none';
-            }
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert(Thank you, ${name}! Your message has been received. We'll contact you at ${email} soon.);
+            
+            // Reset the form
+            contactForm.reset();
+        });
+
+        // Add animation to feature cards when they come into view
+        const featureCards = document.querySelectorAll('.feature-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        featureCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
         });
     </script>
 </body>
